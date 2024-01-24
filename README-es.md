@@ -1,29 +1,28 @@
-# Proyecto Electrodomésticos con Java, JSP
+# Proyecto Electrodomésticos con MVC y DAO en Java
 
-Este proyecto implementa una aplicación web utilizando la arquitectura MVC (Modelo-Vista-Controlador) y el patrón DAO (Data Access Object) en Java. La aplicación gestiona información sobre electrodomésticos y utiliza un MemoryStore para almacenar los objetos correspondientes.
+Esta es una aplicación web simple para gestionar y buscar electrodomésticos utilizando Java, Servlets y JSP.
 
-### **Select Language:**
-- [Español (Spanish)](README-es.md)
-- [English](README-es.md)
+### **Seleccionar Idioma:**
+- [Español](README-es.md)
+- [Inglés](README.md)
 
 ## Resultados
 ### Inicio
-![Alt text](docs/inicio.PNG)
-### Mayor de 10
-![Alt text](docs/elderly.PNG)
-### Menor de 10
-![Alt text](docs/minor.PNG)
+![Inicio](docs/inicio.PNG)
+### Mayor a 10
+![Mayor a 10](docs/elderly.PNG)
+### Menor a 10
+![Menor a 10](docs/minor.PNG)
 ### Igual a 10
-![Alt text](docs/equals.PNG)
+![Igual a 10](docs/equals.PNG)
 
-
-## Requisitos previos
+## Requisitos Previos
 
 - IntelliJ IDEA
 - JDK 8 o superior
 - Tomcat o cualquier servidor web compatible
 
-## Configuración del proyecto
+## Configuración del Proyecto
 
 1. Clona o descarga el proyecto desde el repositorio.
 
@@ -33,44 +32,54 @@ Este proyecto implementa una aplicación web utilizando la arquitectura MVC (Mod
 
 4. Configura las dependencias del proyecto.
 
-## Estructura del proyecto
+# Aplicación Web Electrodomésticos
 
-- **`src/main/java/`**: Contiene los paquetes y clases Java.
-    - **`controller/`**: Contiene los servlets que actúan como controladores.
-    - **`model/`**: Contiene las clases de modelo, como Electrodomestico y MemoryStore.
-    - **`dao/`**: Contiene las clases DAO para interactuar con el MemoryStore.
-    - **`view/`**: Contiene las clases para las páginas JSP (Vistas).
+Esta es una aplicación web simple para gestionar y buscar electrodomésticos utilizando Java, Servlets y JSP.
 
-- **`webapp/`**: Contiene los recursos web.
-    - **`WEB-INF/`**: Contiene el archivo `web.xml` para la configuración de servlets.
+## Resumen
 
-## Configuración del MemoryStore
+La aplicación te permite:
 
-- En `MemoryStore.java`, se gestiona el almacenamiento de objetos Electrodomestico. Los datos incluyen código único, nombre, marca, modelo, fecha de elaboración y cantidad de unidades.
+- Agregar electrodomésticos al inventario.
+- Listar todos los electrodomésticos en el inventario.
+- Buscar un electrodoméstico por su código único.
 
-## Funcionalidades de la aplicación
+## Tecnologías Utilizadas
 
-1. **Cargar datos al MemoryStore directamente desde el servlet:**
-    - Utiliza el servlet `CargarDatosServlet` para cargar datos al MemoryStore directamente sin necesidad de una interfaz de ingreso.
+- Java
+- Servlets
+- JSP
+- Jakarta EE
+- Maven (para la gestión del proyecto)
 
-2. **Buscar electrodoméstico por código:**
-    - La página `BuscarElectrodomestico.jsp` permite ingresar el código del electrodoméstico a buscar.
+## Estructura del Proyecto
 
-3. **Mostrar detalles del electrodoméstico:**
-    - Si existen más de 10 unidades, se muestra la página `DetallesElectrodomestico.jsp` con información detallada (nombre, marca, modelo y fecha de elaboración).
+- **com.electro.controller**: Contiene el Servlet para manejar las solicitudes.
+- **com.electro.dao**: Implementa la capa de acceso a datos.
+- **com.electro.idao**: Define la interfaz para el acceso a datos.
+- **com.electro.model**: Define el modelo de datos para Electrodomestico.
 
-4. **Mensaje para menos de 10 unidades:**
-    - Si hay menos de 10 unidades, se muestra un mensaje en la página `MensajeUnidades.jsp` indicando que se deben sacar más unidades de bodega.
+## Cómo Ejecutar
 
-5. **Mensaje para 0 unidades:**
-    - Si no hay unidades disponibles, se muestra un mensaje en la página `MensajeSinUnidades.jsp` indicando que se debe importar un lote del producto.
+1. Clona el repositorio.
+2. Abre el proyecto en tu IDE Java preferido.
+3. Ejecuta la aplicación en un servidor compatible con Jakarta EE.
 
-## Ejecución del proyecto
+## Datos de Ejemplo
 
-1. Configura tu servidor web en IntelliJ IDEA.
+La aplicación está prellenada con datos de ejemplo con fines demostrativos.
 
-2. Ejecuta la aplicación y accede a la URL proporcionada por tu servidor web.
+## Uso
 
-3. Explora las funcionalidades de la aplicación siguiendo las rutas especificadas para cada servlet y página JSP.
+1. Accede a la aplicación navegando a `http://localhost:puerto-tuyo/servletController`.
+2. Puedes agregar, listar y buscar electrodomésticos utilizando las opciones proporcionadas.
 
-¡Disfruta del proyecto de Electrodomésticos! 🚀
+## Autor
+
+- **Angel Patiño Diaz**
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE.md](LICENSE.md) para más detalles.
+
+¡Disfruta del proyecto Electrodomésticos! 🚀

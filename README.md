@@ -1,6 +1,6 @@
 # Appliances Project with MVC and DAO in Java
 
-This project implements a web application using the MVC (Model-View-Controller) architecture and the DAO (Data Access Object) pattern in Java. The application manages information about appliances and uses a MemoryStore to store the corresponding objects.
+This is a simple web application for managing and searching electrodomesticos (home appliances) using Java, Servlets, and JSP.
 
 ### **Select Language:**
 - [Español (Spanish)](README-es.md)
@@ -32,44 +32,56 @@ This project implements a web application using the MVC (Model-View-Controller) 
 
 4. Configure project dependencies.
 
+
+# Electrodomesticos Web Application
+
+This is a simple web application for managing and searching electrodomesticos (home appliances) using Java, Servlets, and JSP.
+
+## Overview
+
+The application allows you to:
+
+- Add electrodomesticos to the inventory.
+- List all electrodomesticos in the inventory.
+- Search for an electrodomestico by its unique code.
+
+## Technologies Used
+
+- Java
+- Servlets
+- JSP
+- Jakarta EE
+- Maven (for project management)
+
 ## Project Structure
 
-- **`src/main/java/`**: Contains Java packages and classes.
-    - **`controller/`**: Contains servlets acting as controllers.
-    - **`model/`**: Contains model classes, such as Electrodomestico and MemoryStore.
-    - **`dao/`**: Contains DAO classes to interact with MemoryStore.
-    - **`view/`**: Contains classes for JSP pages (Views).
+- **com.electro.controller**: Contains the Servlet for handling requests.
+- **com.electro.dao**: Implements the data access layer.
+- **com.electro.idao**: Defines the interface for data access.
+- **com.electro.model**: Defines the data model for Electrodomestico.
 
-- **`webapp/`**: Contains web resources.
-    - **`WEB-INF/`**: Contains the `web.xml` file for servlet configuration.
+## How to Run
 
-## MemoryStore Configuration
+1. Clone the repository.
+2. Open the project in your preferred Java IDE.
+3. Run the application on a Jakarta EE compatible server.
 
-- In `MemoryStore.java`, the storage of Electrodomestico objects is managed. Data includes unique code, name, brand, model, production date, and quantity of units.
+## Sample Data
 
-## Application Features
+The application is pre-populated with sample data for demonstration purposes.
 
-1. **Load data to MemoryStore directly from the servlet:**
-    - Use the `CargarDatosServlet` servlet to load data directly to MemoryStore without the need for a data entry interface.
+## Usage
 
-2. **Search for appliances by code:**
-    - The `BuscarElectrodomestico.jsp` page allows entering the code of the appliance to search for.
+1. Access the application by navigating to `http://localhost:your-port/servletController`.
+2. You can add, list, and search for electrodomesticos using the provided options.
 
-3. **Show details of the appliance:**
-    - If there are more than 10 units, the `DetallesElectrodomestico.jsp` page is displayed with detailed information (name, brand, model, and production date).
 
-4. **Message for less than 10 units:**
-    - If there are fewer than 10 units, a message is displayed on the `MensajeUnidades.jsp` page indicating that more units should be taken from the warehouse.
+## Author
 
-5. **Message for 0 units:**
-    - If no units are available, a message is displayed on the `MensajeSinUnidades.jsp` page indicating that a batch of the product should be imported.
+- **Angel Patiño Diaz**
 
-## Running the Project
+## License
 
-1. Configure your web server in IntelliJ IDEA.
-
-2. Run the application and access the URL provided by your web server.
-
-3. Explore the application's features by following the specified paths for each servlet and JSP page.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 Enjoy the Appliances project! 🚀
